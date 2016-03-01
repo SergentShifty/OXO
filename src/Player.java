@@ -14,10 +14,6 @@ public class Player{
 	public Piece getPiece(){
 		return _piece;
 	}
-	
-	public void setName(String name){
-		_name = name;
-	}
 
 	@Override
 	public String toString(){
