@@ -23,10 +23,14 @@ public class Game{
 		try{
 			return _board.getPieceFromBoard(y, x);
 		} catch (IllegalArgumentException e) {
-			System.err.println("Internal error !");
+			System.err.println("Internal error !\nThe game will end !");
 			_isFinished = true;
 			return Piece.EMPTY;
 		}
+	}
+	
+	public int getLengthBoard(){
+		return _board.getBoardLength();
 	}
 
 	@Override

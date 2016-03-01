@@ -18,12 +18,16 @@ public class Board{
 		}
 	}
 	
-	public void setBoard(int y, int x, Piece piece){
+	public void setPieceToBoard(int y, int x, Piece piece){
 		if(y < 0 || x < 0 || y >= _board.length || x >= _board.length){
 			throw new IllegalArgumentException("Invalid arguments");
 		} else {
 			_board[y][x] = piece;
 		}
+	}
+	
+	public int getBoardLength(){
+		return _board.length;
 	}
 
 	@Override
