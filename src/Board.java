@@ -10,7 +10,7 @@ public class Board{
 		}
 	}
 	
-	public Piece getBoard(int y, int x){
+	public Piece getPieceFromBoard(int y, int x){
 		if(y < 0 || x < 0 || y >= _board.length || x >= _board.length){
 			throw new IllegalArgumentException("Invalid arguments");
 		} else {
