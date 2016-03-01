@@ -6,15 +6,12 @@ public class Game{
 	private Player _currentPlayer;
 	
 	public Game(String namePlayer1, String namePlayer2){
-		_player1 = new Player(namePlayer1);
-		_player2 = new Player(namePlayer2);
+		_player1 = new Player(namePlayer1, Piece.RED);
+		_player2 = new Player(namePlayer2, Piece.YELLOW);
 		_board = new Board();
 		_isFinished = false;
-		if((int)(Math.random()) == 0){
-			_currentPlayer = _player1;
-		}else{
-			_currentPlayer = _player2;
-		}
+		if((int)(Math.random()) == 0) _currentPlayer = _player1;
+		else _currentPlayer = _player2;
 	}
 	
 	public String getNamePlayer1(){
