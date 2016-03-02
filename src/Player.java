@@ -3,6 +3,7 @@ public class Player{
 	private Piece _piece;
 	
 	public Player(String name, Piece piece){
+		if(piece == Piece.EMPTY) throw new IllegalArgumentException("Invalid arguments");
 		_name = name;
 		_piece = piece;
 	}
@@ -17,6 +18,6 @@ public class Player{
 
 	@Override
 	public String toString(){
-		return _name;
+		return _name + " (" + _piece.getColor() + ")";
 	}
 }

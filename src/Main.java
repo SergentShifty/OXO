@@ -1,6 +1,6 @@
 public class Main{
 	public static void main(String[] args){
-		Game game = new Game("Mehdi", "Maurad");
+		/*Game game = new Game("Mehdi", "Maurad");
 		System.out.println("=====================");
 		System.out.println("======== OXO ========");
 		System.out.println("=====================\n");
@@ -8,6 +8,8 @@ public class Main{
 		while(!game.getIsFinished()){
 			game.setPieceToBoard(Util.askIntMax("y : ", game.getLengthBoard()), Util.askIntMax("x : ", game.getLengthBoard()));
 			System.out.println(game);
-		}
+		}*/
+		Player a = new Player("aa", Piece.RED);
+		System.out.println(a);
 	}
 }

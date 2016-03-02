@@ -14,10 +14,13 @@ public class Board{
 		} else return _board[y][x];
 	}
 	
-	public void setPieceToBoard(int y, int x, Piece piece){
+	public boolean setPieceToBoard(int y, int x, Piece piece){
 		if(y < 0 || x < 0 || y >= _board.length || x >= _board.length){
 			throw new IllegalArgumentException("Invalid arguments");
-		} else _board[y][x] = piece;
+		}else if(_board[y][x] == piece.EMPTY){
+			_board[y][x] = piece;
+			return true;
+		}else return false;
 	}
 	
 	public int getBoardLength(){
