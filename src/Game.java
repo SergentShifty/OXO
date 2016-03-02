@@ -32,8 +32,20 @@ public class Game{
 		}
 	}
 	
+	public void setPieceToBoard(int y, int x){
+		try{
+			_board.setPieceToBoard(y, x, _currentPlayer.getPiece());
+		} catch (IllegalArgumentException e) {
+			System.err.println("Invalid arguments");
+		}
+	}
+	
 	public int getLengthBoard(){
 		return _board.getBoardLength();
+	}
+	
+	public boolean getIsFinished(){
+		return _isFinished;
 	}
 
 	@Override
