@@ -50,6 +50,6 @@ public class Game{
 
 	@Override
 	public String toString(){
-		return _board.toString();
+		return _currentPlayer.getName() + "'s turn\n" + _board;
 	}
 }
