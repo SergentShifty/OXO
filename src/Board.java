@@ -34,6 +34,58 @@ public class Board{
 					return false;
 		return true;
 	}
+	
+	public Piece isWinnerHorizontal(){
+		boolean finish;
+		for(int y = 0; y < _board.length; y++){
+			finish = true;
+			for(int x = 1; x < _board.length; x++){
+				if(_board[y][x] != _board[y][0]) finish = false;
+			}
+			if(finish) return _board[y][0];
+		}
+		return Piece.EMPTY;
+	}
+	
+	public Piece isWinnerVertical(){
+		boolean finish;
+		for(int x = 0; x < _board.length; x++){
+			finish = true;
+			for(int y = 1; y < _board.length; y++){
+				if(_board[y][x] != _board[0][x]) finish = false;
+			}
+			if(finish) return _board[0][x];
+		}
+		return Piece.EMPTY;
+	}
+	
+	public Piece isWinnerDiagonal(){
+		boolean finish = true;
+		boolean finishAnti = true;
+		for(int i = 1; i < _board.length; i++){
+			if(_board[i][i] != _board[0][0]){
+				finish = false;
+			}
+		}
+		if(finish) return _board[0][0];
+		for(int i = 1; i < _board.length; i++){
+			if(_board[i][i - _board.length - 1] != _board[0][_board.length - 1]){
+				finishAnti = false;
+			}
+		}
+		if(finishAnti) return _board[0][0];
+		return Piece.EMPTY;
+	}
+	
+	public Piece isWinner(){
+		Piece horizontal = isWinnerHorizontal();
+		Piece vertical = isWinnerVertical();
+		Piece diagonal = isWinnerDiagonal();
+		if(horizontal != Piece.EMPTY) return horizontal;
+		if(vertical != Piece.EMPTY) return vertical;
+		if(diagonal != Piece.EMPTY) return diagonal;
+		return Piece.EMPTY;
+	}
 
 	@Override
 	public String toString(){
