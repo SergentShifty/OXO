@@ -6,7 +6,7 @@ public enum Piece{
 	private String _print;
 	private String _color;
 	
-	public Piece(String print, String color){
+	Piece(String print, String color){
 		_print = print;
 		_color = color;
 	}
