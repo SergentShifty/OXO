@@ -9,7 +9,6 @@ public class Main{
 			game.setPieceToBoard(Util.askIntMax("y : ", game.getLengthBoard()), Util.askIntMax("x : ", game.getLengthBoard()));
 			System.out.println(game);
 		}*/
-		Player a = new Player("aa", Piece.RED);
-		System.out.println(a);
+		System.out.println(Util.askIntPositiveMax(null, 2));
 	}
 }
