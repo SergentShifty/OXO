@@ -26,17 +26,18 @@ public class Game{
 		try{
 			return _board.getPieceFromBoard(y, x);
 		} catch (IllegalArgumentException e) {
-			System.err.println("Internal error !\nThe game will end !");
-			_isFinished = true;
+			System.err.println("Invalid arguments!");
 			return Piece.EMPTY;
 		}
 	}
 	
 	public void setPieceToBoard(int y, int x){
 		try{
-			_board.setPieceToBoard(y, x, _currentPlayer.getPiece());
+			if(_board.setPieceToBoard(y, x, _currentPlayer.getPiece())){
+				changeCurrentPlayer();
+			}
 		} catch (IllegalArgumentException e) {
-			System.err.println("Invalid arguments");
+			System.err.println("Invalid arguments!");
 		}
 	}
 	
@@ -46,6 +47,11 @@ public class Game{
 	
 	public boolean getIsFinished(){
 		return _isFinished;
+	}
+	
+	public void changeCurrentPlayer(){
+		if(_currentPlayer == _player1) _currentPlayer = _player2;
+		else _currentPlayer = _player1;
 	}
 
 	@Override
